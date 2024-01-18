@@ -1,0 +1,106 @@
+.local {
+  padding-top: 160px;
+  @media screen and (max-width: 700px) {
+    padding-top: 50px;
+  }
+  // .local__title
+  &__title {
+    margin-bottom: 30px;
+    color: $black;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  // .local__subtitle
+  &__subtitle {
+    margin-bottom: 60px;
+    max-width: 616px;
+  }
+  // .local__list
+  &__list {
+    list-style-type: none;
+    counter-reset: my-counter;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  }
+  // .local__items
+  &__items {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+
+    &::before {
+      content: counter(my-counter);
+      counter-increment: my-counter;
+      padding: 2px 25px;
+      color: #fff;
+      background-color: $blue;
+      border-radius: 5px;
+      position: absolute;
+      top: -30px;
+      left: 0;
+      // transform: translateX(-50%);
+    }
+  }
+  // .local__text
+  &__text {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  // .local__body
+  &__body {
+    margin-top: 30px;
+    // .local__body_text
+    &_text {
+      text-align: center;
+      margin-inline: auto;
+      margin-bottom: 30px;
+    }
+    // .local__body_title
+    &_title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 40px;
+      max-width: 620px;
+      margin-inline: auto;
+    }
+    // .local__body_list
+    &_list {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+    // .local__body_item
+    &_item {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  // .local__item
+  &__item {
+    // .local__item_title
+    &_title {
+      max-width: 300px;
+      font-size: 22px;
+      font-weight: 500;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 57px;
+        height: 1px;
+        background-color: $blue;
+        margin-top: 5px;
+      }
+    }
+    // .local__item_text
+    &_text {
+      max-width: 660px;
+    }
+  }
+}
