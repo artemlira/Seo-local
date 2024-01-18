@@ -1,0 +1,16 @@
+@import "./reset";
+@import './variables';
+@import './functions';
+@import './mixins';
+@import './fonts'; //если шрифты лежать локально в папке fonts
+@import './global';
+@import './header';
+@import './hero';
+@import './whats';
+@import './footer';
+// @import "./tabs";  //для подключения tabs
+@import './swiper'; //для подключения swiper
+// @import './accordion'; //для подключения accordion
+// @import "./form/_select.scss"; //для подключения select
+// @import './form/inputCheckbox'; //для подключения Checkbox
+// @import "./form/inputRadio"; //для подключения Radio button

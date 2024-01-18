@@ -1,0 +1,44 @@
+.footer {
+  padding-block: 25px 30px;
+  border-top: 1px solid rgba(88, 88, 88, 0.2);
+  flex: 0 0 auto;
+  // .footer__container
+  &__container {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+  }
+  // .footer__social
+  &__social {
+    display: flex;
+    gap: 15px;
+    // .footer__social_twitter
+    &_twitter,
+    &_facebook,
+    &_insta {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 22px;
+      height: 22px;
+      &:hover {
+        transform: scale(1.2);
+        path {
+          fill: $black;
+        }
+      }
+    }
+  }
+}
+.footer__logo {
+  width: 96px;
+  height: 22px;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.2);
+  }
+  svg {
+    max-width: 100%;
+    object-fit: cover;
+    fill: $blue;
+  }
+}

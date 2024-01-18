@@ -1,0 +1,21 @@
+//Переменные=========================================================================
+$minWidth: 320px;
+$maxWidth: 1152;
+$maxWidthContainer: 1260;
+$md1: $maxWidthContainer + 12;
+$netbook: 991.98 + px;
+$tablet: 767.98;
+$phone: 479.98;
+$burgerBreakpoint: $netbook;
+$burgerColor: #585858f1;
+$burgerActiveColor: #232323;
+
+$fira : 'Fira Code',
+monospace;
+
+
+$black: #232323;
+$blue: #0532CF;
+$darkGrey: #585858; 
+$grey: #E9E9E9;
+$lightGrey: #F1F1F1;

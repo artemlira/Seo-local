@@ -1,0 +1,31 @@
+.hero {
+  // .hero__container
+  &__container {
+    margin-top: 115px;
+
+    @media screen and (max-width: 600px) {
+      margin-top: 40px;
+    }
+  }
+  // .hero__title
+  &__title {
+    color: $black;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    max-width: 1020px;
+    margin-bottom: 10px;
+    span {
+      color: $blue;
+    }
+
+    @media screen and (max-width: 600px) {
+       font-size: 32px;
+    }
+  }
+  // .hero__subtitle
+  &__subtitle {
+    max-width: 723px;
+  }
+}

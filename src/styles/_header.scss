@@ -1,0 +1,323 @@
+// ==================== header styles ====================
+.header {
+  flex: 0 0 auto;
+
+  &.fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+.logo {
+  width: 96px;
+  height: 22px;
+  z-index: 5;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.2);
+  }
+  svg {
+    width: 100%;
+    object-fit: cover;
+    fill: $blue;
+  }
+}
+
+// ==================== menu styles ====================
+.menu {
+  @media screen and (max-width: $burgerBreakpoint) {
+    display: none;
+  }
+  // .menu__list
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+
+  // .menu__item
+  &__item {
+    display: flex;
+    position: relative;
+
+    // .menu__item_link
+    &_link {
+      color: $darkGrey;
+      display: flex;
+      position: relative;
+      transition: 0.3s color ease;
+      font-family: Manrope;
+      &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        background-color: $blue;
+        height: 1px;
+        width: 100%;
+        transform: scale(0);
+        transition: 0.5s transform;
+      }
+      &:hover {
+        color: $blue;
+        &::after {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+// ==================== mobile menu style ====================
+.menu-mobile {
+  display: flex;
+  height: 100vh;
+  width: 300px;
+  padding: 60px 30px;
+  background-color: $burgerColor;
+  flex-direction: column;
+  pointer-events: all;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 2;
+  animation: fade 0.1s linear;
+  right: -100%;
+  top: 0;
+  position: fixed;
+  transition: right 0.8s ease;
+  &.active {
+    right: 0;
+  }
+
+  // .menu-mobile__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  // .menu-mobile__item
+  &__item {
+    // .menu-mobile__item_link
+    &_link {
+      color: #fff;
+      display: flex;
+      position: relative;
+      transition: 0.3s color ease;
+      font-size: 20px;
+      &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        background-color: $blue;
+        height: 1px;
+        width: 100%;
+        transform: scale(0);
+        transition: 0.5s transform;
+      }
+      &:hover {
+        color: $blue;
+        &::after {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+// ==================== стили кнопки burger ====================
+.burger {
+  display: none;
+  background-color: transparent;
+  z-index: 3;
+  @media screen and (max-width: $burgerBreakpoint) {
+    display: flex;
+    position: relative;
+    height: 20px;
+    width: 30px;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    &::after,
+    &::before,
+    & span {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $burgerActiveColor;
+      transform-origin: 50% 50%;
+      border-radius: 8px;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    & span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      bottom: 0px;
+    }
+
+    &.active {
+      &::before {
+        animation: moveTopLine 0.4s forwards;
+      }
+      & span {
+        animation: moveMidLine 0.4s forwards;
+      }
+      &::after {
+        animation: moveBotLine 0.4s forwards;
+      }
+    }
+
+    // & {
+    //   &::before {
+    //     animation: moveTopLineRev 0.4s forwards;
+    //   }
+    //   & span {
+    //     animation: moveMidLineRev 0.4s forwards;
+    //   }
+    //   &::after {
+    //     animation: moveBotLineRev 0.4s forwards;
+    //   }
+    // }
+
+    @keyframes moveTopLine {
+      0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.5);
+        top: -1px;
+      }
+      50% {
+        transform: scale(1);
+      }
+      75% {
+        transform: scale(1) translateY(-50%);
+        top: 50%;
+      }
+      100% {
+        transform: scale(1) translateY(-50%) rotate(-45deg);
+        top: 50%;
+      }
+    }
+    @keyframes moveTopLineRev {
+      0% {
+        transform: scale(1) translateY(-50%) rotate(-45deg);
+        top: 50%;
+      }
+      25% {
+        transform: scale(1.5) translateY(-50%) rotate(-45deg);
+        top: 50%;
+      }
+      50% {
+        transform: scale(1) translateY(-50%) rotate(-45deg);
+        top: 50%;
+      }
+      75% {
+        transform: scale(1) translateY(-50%) rotate(0);
+        top: 50%;
+      }
+      100% {
+        transform: scale(1) translateY(0);
+        top: 0;
+      }
+    }
+    @keyframes moveMidLine {
+      0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.5);
+      }
+      50% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      75% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes moveMidLineRev {
+      0% {
+        opacity: 0;
+      }
+      25% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0;
+      }
+      75% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes moveBotLine {
+      0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.5);
+        bottom: -1px;
+      }
+      50% {
+        transform: scale(1);
+      }
+      75% {
+        transform: scale(1) translateY(-50%);
+        top: 50%;
+      }
+      100% {
+        transform: scale(1) translateY(-50%) rotate(45deg);
+        top: 50%;
+      }
+    }
+    @keyframes moveBotLineRev {
+      0% {
+        transform: scale(1) translateY(-50%) rotate(45deg);
+        top: 50%;
+      }
+      25% {
+        transform: scale(1.5) translateY(-50%) rotate(45deg);
+        top: 50%;
+      }
+      50% {
+        transform: scale(1) translateY(-50%) rotate(45deg);
+        top: 50%;
+      }
+      75% {
+        transform: scale(1) translateY(-50%) rotate(0);
+        top: 50%;
+      }
+      100% {
+        transform: scale(1) translateY(0);
+        bottom: 0;
+      }
+    }
+  }
+}
