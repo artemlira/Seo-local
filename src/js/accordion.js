@@ -1,5 +1,5 @@
 // Для подключения аккордиона нужно вставить следующую строку
-// <load ="partials/_accordion.html" title="Аккордион триггер" text="Какой-то текст для аккордеона"/>
+//  <load ="src/components/_accordion.html" title="Аккордион триггер" text="Какой-то текст для аккордеона"/>
 
 // Аккордеон
 export default function accordion() {

@@ -79,6 +79,11 @@
     &_item {
       display: flex;
       justify-content: space-between;
+      gap: 20px;
+
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+      }
     }
   }
   // .local__item
