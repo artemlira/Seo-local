@@ -63,6 +63,7 @@ body {
   max-width: $maxWidthContainer + px;
   padding-inline: 20px;
   margin-inline: auto;
+  overflow: hidden;
 
   @include netbook {
     max-width: $netbook + px;

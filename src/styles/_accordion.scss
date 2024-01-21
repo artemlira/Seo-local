@@ -26,6 +26,8 @@
 .accordion__item.active {
   .accordion__item-content {
     display: block;
+
+    transition: all 1.8s ease;
   }
   .trigger__line-2 {
     opacity: 0;
@@ -78,7 +80,6 @@
   // ==================== текст аккордиона ====================
   // .content__text
   &__text {
-    font-style: italic;
     margin: 10px;
     &:first-child {
       margin-top: 0;
